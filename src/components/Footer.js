@@ -7,7 +7,9 @@ export default function Footer({active}){
     
     return(
         <>
+             <hr className='linear2' ></hr>
             <div className="footer-block">
+               
                 <div className='row'>
                     <div className='col-6 col-footer'>
                         <div  className='footer-button'>

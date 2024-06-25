@@ -131,13 +131,20 @@ svg {
     background-color: rgb(33, 33, 33); /* Устанавливаем цвет линии */
 }
 
+.linear2{
+  width: 100%;
+    border: none;          /* Убираем стандартное оформление */
+    height: 2px;           /* Устанавливаем высоту линии */
+    background-color: white; /* Устанавливаем цвет линии */
+}
+
 .loading-menu{
     color: white;
     font-weight: 500;
 }
 
 .footer-block {
-  border-top: 1px solid hwb(0 100% 0%);
+  
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -181,7 +188,7 @@ svg {
     display: flex;
     align-items: center;
     padding: 20px;
-    border-bottom: 2px solid hwb(0 100% 0%);
+    
 }
 
 
@@ -193,3 +200,4 @@ svg {
     padding-top: 15px;
     padding-bottom: 100px;
 }
+
