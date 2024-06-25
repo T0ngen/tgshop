@@ -137,15 +137,13 @@ svg {
 }
 
 .footer-block {
-    border-top: 1px solid hwb(0 100% 0%);
-    width: calc(100%); 
-    position: absolute;
-    bottom: 0px; 
-    height: auto;
-    background-color: #45474d;
-    
-    
-    
+  border-top: 1px solid hwb(0 100% 0%);
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  height: auto;
+  background-color: #45474d;
+  z-index: 100; /* Опционально */
 }
 
 .footer-button{
