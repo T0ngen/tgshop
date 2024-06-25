@@ -181,7 +181,7 @@ svg {
     display: flex;
     align-items: center;
     padding: 20px;
-    border-bottom: 1px solid hwb(0 100% 0%);
+    border-bottom: 2px solid hwb(0 100% 0%);
 }
 
 
