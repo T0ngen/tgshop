@@ -13,6 +13,10 @@ const MainPage = () => {
   { id: 2, name: 'Vpn', img: 'vpn.png', description: 'Лучшие VPN' },
   { id: 3, name: 'Скрипты', img: 'scripts.png', description: 'Лучшие скрипты' },
   { id: 4, name: 'Прокси', img: 'proxy.png', description: 'Лучшие прокси' },
+  { id: 1, name: 'Email', img: 'email.jpeg', description: 'Лучшие email'},
+  { id: 2, name: 'Vpn', img: 'vpn.png', description: 'Лучшие VPN' },
+  { id: 3, name: 'Скрипты', img: 'scripts.png', description: 'Лучшие скрипты' },
+  { id: 4, name: 'Прокси', img: 'proxy.png', description: 'Лучшие прокси' },
   
 ];
 
