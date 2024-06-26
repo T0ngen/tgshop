@@ -229,3 +229,100 @@ svg {
   }
   
 
+.username{
+    color: white;
+}
+
+.profile-conteiner{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+
+   align-items: center; 
+}
+
+.profile{
+    display: flex;
+    padding-top: 15px;
+    width: 100%;
+    
+}
+
+
+.profile-userinfo2{
+    width: 45%;
+    border: 1px solid black;
+    padding: 15px;
+    margin: auto 20px;
+    background-color: #6258AA;
+    border-radius: 25px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.username{
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+
+.balance-container{
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.balance-text{
+    font-size: 20px;
+    padding-bottom: 5px;
+   
+}
+
+
+
+.row-balance{
+    display: flex;
+    align-items: center;
+    
+}
+
+.balance-count{
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+}
+
+
+.Orders{
+    width: 60%;
+    height: 60px;
+    border: 1px solid black;
+    margin: 25px auto;
+    background-color: #6258AA;
+    border-radius: 25px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    
+}
+
+.orders-left{
+    display: flex;
+
+}
+
+.orders-icon{
+    margin-left: 20px;
+}
+
+.orders-text{
+    font-size: 24px;
+    margin-left: 20px;
+    font-weight: 600;
+    color: white;
+
+
+}
+.orders-right{
+    margin-right: 20px;
+}

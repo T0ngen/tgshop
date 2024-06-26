@@ -4,16 +4,17 @@ import Spinner from './SpinnerLoader';
 
 import Footer from './Footer';
 import Header from './Header'
+import Profile from './Profile'
 
 
 export default function ProfilePage(){
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
-  const fakeData = [
-  { id: 1, tg_id: 1231441, name: 'Legacy.dev', balance: 0},
+  const fakeData = {
+   id: 1, tg_id: 1231441, name: 'Legacy.dev', balance: 0, buys: 0
   
   
-];
+  };
 
 // Функция для получения данных
 const fetchData = async () => {
@@ -49,7 +50,7 @@ const fetchData = async () => {
     <>
       {loading ? <Spinner /> : <div>
       <Header/>
-      
+      <Profile data={data}/>
       <Footer active={'active2'}/>
       </div>}
       
