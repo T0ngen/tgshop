@@ -157,9 +157,15 @@ svg {
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    width: 100%; /* Ensures full width */
+    height: 100%;
     flex-direction: column;
     cursor: pointer;
 }
+
+
+
 
 .footer-text{
     font-weight: 800;
@@ -197,7 +203,29 @@ svg {
 }
 
 .categories{
-    padding-top: 15px;
+    padding-top: 5px;
     padding-bottom: 100px;
 }
+
+
+
+.categories-name{
+    color: white;
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.col-footer{
+    transition: background-color 0.3s ease, color 0.3s ease;
+    
+
+}
+
+.col-footer:hover {
+      /* Change this to your desired hover background color */
+    color: black; /* Change this to your desired hover text color */
+  }
+  
 
