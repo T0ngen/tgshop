@@ -217,6 +217,30 @@ svg {
     justify-content: center;
 }
 
+.button-back{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 40px;
+    margin: 0px auto;
+    background-color: #6258AA;
+    margin-top: 15px;
+    border-radius: 25px;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.button-back:hover{
+    background-color: #e0e0e0; /* Светло-серый фон при наведении */
+    color: #222; /* Более темный текст при наведении */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Легкая тень */
+    transform: scale(1.05); /* Слегка увеличиваем кнопку */
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
 .col-footer{
     transition: background-color 0.3s ease, color 0.3s ease;
     
@@ -237,7 +261,7 @@ svg {
    display: flex;
    flex-direction: column;
    justify-content: center;
-
+   padding-bottom: 100px;
    align-items: center; 
    
 }
@@ -372,3 +396,43 @@ svg {
     transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
 }
 
+
+.items-container{
+    padding-top: 20px;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.item-container {
+    
+    width: 90%;
+    align-items: center; /* Выравнивание элементов по началу */
+    padding: 10px; /* Внутренние отступы для контейнера */
+    border: 1px solid #ccc; /* Рамка для контейнера */
+    border-radius: 7px; /* Закругленные углы */
+    margin-bottom: 20px;
+    background-color: #3d3f45;
+}
+
+.item {
+    flex: 1;
+    text-align: center;
+    padding: 5px;
+    /* Устранение overflow для item */
+    overflow: hidden;
+}
+
+.item-text {
+    flex: 1;
+    white-space: normal;
+    word-wrap: break-word;  /* Разрешаем разрывы слов для переносов */
+    width: 100%; /* Задаем ширину 50% для текстового элемента */
+    height: auto; /* Высота автоматически увеличивается */
+    overflow: hidden; /* Скрываем переполненный текст */
+    text-overflow: ellipsis; /* Добавляем многоточие, если текст слишком длинный */
+}

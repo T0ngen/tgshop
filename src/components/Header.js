@@ -6,7 +6,7 @@ export default function Header(){
         <>
 
             <div className='Header'>
-                <img className='logo' src={"./img/logo.png"}/>
+                <img className='logo' src={"../img/logo.png"} alt='logo'/>
                <h1 className='shop-name'>Legacy.shop™️</h1>
                
             </div>
