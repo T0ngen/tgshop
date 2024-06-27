@@ -417,6 +417,13 @@ svg {
     border-radius: 7px; /* Закругленные углы */
     margin-bottom: 20px;
     background-color: #3d3f45;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Легкая тень */
+}
+.item-container2 {
+    
+    
+    align-items: center; /* Выравнивание элементов по началу */
+    
 }
 
 .item {
@@ -435,4 +442,60 @@ svg {
     height: auto; /* Высота автоматически увеличивается */
     overflow: hidden; /* Скрываем переполненный текст */
     text-overflow: ellipsis; /* Добавляем многоточие, если текст слишком длинный */
+    color: white;
+    
+}
+
+.item-price{
+    color: white;
+    font-weight: 500;
+    
+}
+
+.vertical-divider {
+    height: 40px;
+    background-color: #6258AA;
+    
+}
+
+
+.item-count{
+    color: white;
+    font-weight: 400;
+}
+
+.buy-save-container{
+    display: flex;
+    
+    justify-content: space-between;
+    padding-top: 5px;
+}
+
+
+.buy-button{
+    border: 1px solid black;
+    width: 45%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background-color: #6258AA;
+    border-radius: 25px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+
+.Text-buy-button{
+    color: white;
+    margin: 5px;
+    font-size: 15px;
+}
+
+.buy-button:hover{
+    background-color: #e0e0e0; /* Светло-серый фон при наведении */
+    color: #222; /* Более темный текст при наведении */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Легкая тень */
+    transform: scale(1.05); /* Слегка увеличиваем кнопку */
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
 }
