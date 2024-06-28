@@ -33,7 +33,7 @@ export default function ItemsPage() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`http://localhost:8000/items/${id}`); // Путь к вашему API
+      const response = await fetch(`http://89.23.98.183:9000/items/${id}`); // Путь к вашему API
       const result = await response.json();
       setData(result);
     } catch (error) {
