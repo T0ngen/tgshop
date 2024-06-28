@@ -16,31 +16,21 @@ export default function ProfilePage(){
   
   };
 
-// Функция для получения данных
-const fetchData = async () => {
-  try {
-    // Искусственная задержка для имитации сетевого запроса
-    await new Promise((resolve) => setTimeout(resolve, 500));
-    setData(fakeData);
-  } catch (error) {
-    console.error('Ошибка при загрузке данных:', error);
-  } finally {
-    setLoading(false);
-  }
-};
 
-//  // Функция для получения данных
-//  const fetchData = async () => {
-//    try {
-//      const response = await fetch('https://api.example.com/data'); // Путь к вашему API
-//      const result = await response.json();
-//      setData(result);
-//    } catch (error) {
-//      console.error('Ошибка при загрузке данных:', error);
-//    } finally {
-//      setLoading(false);
-//    }
-//  };
+
+ // Функция для получения данных
+ const fetchData = async () => {
+   try {
+     const response = await fetch('http://localhost:8000/user/1231441'); // Путь к вашему API
+     const result = await response.json();
+     console.log(result);
+     setData(result);
+   } catch (error) {
+     console.error('Ошибка при загрузке данных:', error);
+   } finally {
+     setLoading(false);
+   }
+ };
 
   useEffect(() => {
     fetchData(); // Загружаем данные при монтировании компонента

@@ -87,6 +87,7 @@ export default function ItemInfo({ item }) {
       <Box
             sx={{
               marginTop: '56px',
+              width: '100%',
               maxWidth: '90%', // Ограничение по ширине контейнера
               overflow: 'hidden', // Обрезка содержимого контейнера, если оно превышает размер
               textOverflow: 'ellipsis',
@@ -133,7 +134,7 @@ export default function ItemInfo({ item }) {
 
 
           {/* Слайдер для выбора количества товара и кнопки + / - */}
-          <Typography variant='body1' sx={{ mt: 4 }}>
+          <Typography variant='body1' sx={{ mt: 4, color:'grey' }}>
             Выберите количество:
           </Typography>
           <Box sx={{ display: 'flex', alignItems: 'center', width: '80%', mt: 2 }}>
