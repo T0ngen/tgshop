@@ -484,6 +484,18 @@ svg {
     border-radius: 25px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
+.buy-button2{
+    border: 1px solid black;
+    width: 99%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background-color: #6258AA;
+    border-radius: 25px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
 
 
 .Text-buy-button{

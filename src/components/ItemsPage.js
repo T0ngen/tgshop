@@ -10,7 +10,7 @@ export default function ItemsPage() {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
   const fakeData = [
-    { id: 1, categoryId: 1, name: "Super-Fast-vpn++dafaaffnajfanfanfnajjfnanалфафофовфоаофалоалфоа", price: 250, description: "Хороший впн", count: 10 },
+    { id: 1, categoryId: 1, name: "Super-Fast-vpn++dafaaffnajfanfanfnajjfnanалфафофовфоаофалоалфоа", price: 250, description: "Хороший впнХороший впнХороший впнХороший впнХороший впнХороший впнХороший впнХороший впнХороший впнХороший впнХороший впнХороший впн", count: 10 },
     { id: 2, categoryId: 1, name: "Hello world", price: 260, description: "Хороший впн", count: 10 },
     { id: 3, categoryId: 1, name: "FastVpn", price: 220, description: "Хороший впн", count: 10 },
     { id: 4, categoryId: 1, name: "AstraBpn", price: 280, description: "Хороший впн", count: 2 },
