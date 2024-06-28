@@ -21,7 +21,7 @@ export default function ProfilePage(){
  // Функция для получения данных
  const fetchData = async () => {
    try {
-     const response = await fetch('http://localhost:8000/user/1231441'); // Путь к вашему API
+     const response = await fetch('http://89.23.98.183:8000/user/1231441'); // Путь к вашему API
      const result = await response.json();
      console.log(result);
      setData(result);
