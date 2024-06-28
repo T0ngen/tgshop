@@ -206,10 +206,14 @@ export default function ItemInfo({ item }) {
           py: 1,
           px: 2
         }}>
-         <div className='buy-button2' onClick={toggleDrawer(false)}>
-            <ShoppingCartIcon />
-            <h3 className='Text-buy-button'>Оформить товар</h3>
-          </div>
+        
+        {item.count > 0 && (
+                <div className='buy-button2' onClick={() => toggleDrawer(false)}>
+                    <ShoppingCartIcon />
+                    <h3 className='Text-buy-button'>Оформить товар</h3>
+                </div>
+            )}
+
         </Box>
 
       </Drawer>

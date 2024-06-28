@@ -10,7 +10,7 @@ export default function CategoriesInfo({item}){
     return(
         <>
         <div onClick={()=>handleClick(item.id)} className='col-6 category-container'>
-        <img className='img-category' src={"./img/"+item.img}/>
+        <img className='img-category' src={item.img}/>
         <h3 className='category-name'>{item.name}</h3>
         <hr className='linear-category'/>
         <p className='category-description'>{item.description}</p>

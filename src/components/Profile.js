@@ -5,7 +5,22 @@ import PaymentIcon from '@mui/icons-material/Payment';
 import InfoIcon from '@mui/icons-material/Info';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 export default function Profile({data}){
-    console.log(data)
+    const GetButtonTopUp = async () => {
+        try {
+          const response = await fetch(`http://localhost:8000/topupbalance/${data.tg_id}`); // Путь к вашему API
+          console.log(response);
+          // const result = await response.json();
+          // setData(result); // Если нужно обновить состояние с данными
+          console.log('Запрос успешно отправлен');
+        } catch (error) {
+          console.error('Ошибка при загрузке данных:', error);
+        } finally {
+          // await new Promise((resolve) => setTimeout(resolve, 300));
+          // setLoading(false);
+          console.log('Загрузка завершена');
+        }
+      };
+    
     return(
         <> 
         <h2 className='categories-name'>Профиль</h2>
@@ -26,7 +41,7 @@ export default function Profile({data}){
             </div>
             
             </div>
-            <div className='TopUp'>
+            <div onClick={GetButtonTopUp} className='TopUp'>
                 <PaymentIcon className='orders-icon' fontSize="large"/>
                 <p className='orders-text2'>Пополнить баланс</p>
               

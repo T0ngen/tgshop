@@ -21,33 +21,35 @@ const MainPage = () => {
 ];
 
 // Функция для получения данных
-const fetchData = async () => {
-  try {
-    // Искусственная задержка для имитации сетевого запроса
-    await new Promise((resolve) => setTimeout(resolve, 500));
-    setData(fakeData);
-  } catch (error) {
-    console.error('Ошибка при загрузке данных:', error);
-  } finally {
-    setLoading(false);
-  }
-};
+// const fetchData = async () => {
+//   try {
+//     // Искусственная задержка для имитации сетевого запроса
+//     await new Promise((resolve) => setTimeout(resolve, 500));
+//     setData(fakeData);
+//   } catch (error) {
+//     console.error('Ошибка при загрузке данных:', error);
+//   } finally {
+//     setLoading(false);
+//   }
+// };
 
-//  // Функция для получения данных
-//  const fetchData = async () => {
-//    try {
-//      const response = await fetch('https://api.example.com/data'); // Путь к вашему API
-//      const result = await response.json();
-//      setData(result);
-//    } catch (error) {
-//      console.error('Ошибка при загрузке данных:', error);
-//    } finally {
-//      setLoading(false);
-//    }
-//  };
+ // Функция для получения данных
+ const fetchData = async () => {
+   try {
+     const response = await fetch('http://localhost:8000/categories'); // Путь к вашему API
+     const result = await response.json();
+     setData(result);
+   } catch (error) {
+     console.error('Ошибка при загрузке данных:', error);
+   } finally {
+     await new Promise((resolve) => setTimeout(resolve, 300));
+     setLoading(false);
+   }
+ };
 
   useEffect(() => {
     fetchData(); // Загружаем данные при монтировании компонента
+      
   }, []);
 
   return (

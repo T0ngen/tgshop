@@ -17,31 +17,46 @@ export default function ItemsPage() {
     { id: 4, categoryId: 2, name: "AstraProxy", price: 280, description: "Хороший прокси", count: 2 },
   ];
   
-  // Функция для получения данных
+  // // Функция для получения данных
+  // const fetchData = async () => {
+  //   try {
+  //     // Искусственная задержка для имитации сетевого запроса
+  //     await new Promise((resolve) => setTimeout(resolve, 500));
+  //     setData(fakeData);
+  //   } catch (error) {
+  //     console.error('Ошибка при загрузке данных:', error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+
   const fetchData = async () => {
     try {
-      // Искусственная задержка для имитации сетевого запроса
-      await new Promise((resolve) => setTimeout(resolve, 500));
-      setData(fakeData);
+      const response = await fetch(`http://localhost:8000/items/${id}`); // Путь к вашему API
+      const result = await response.json();
+      setData(result);
     } catch (error) {
       console.error('Ошибка при загрузке данных:', error);
     } finally {
+      await new Promise((resolve) => setTimeout(resolve, 300));
       setLoading(false);
     }
   };
+
 
   useEffect(() => {
     fetchData(); // Загружаем данные при монтировании компонента
   }, []);
 
-  const filteredData = data ? data.filter(item => item.categoryId === parseInt(id)) : [];
+  // const filteredData = data ? data.filter(item => item.categoryId === parseInt(id)) : [];
 
   return (
     <>
       {loading ? <Spinner /> : 
         <div>
           <Header />
-          <Items data={filteredData} />
+          <Items data={data} />
           <Footer active='active' />
         </div>
       }
