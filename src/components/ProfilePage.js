@@ -18,7 +18,7 @@ export default function ProfilePage(){
   };
 
 
-
+//
  // Функция для получения данных
  const fetchData = async () => {
    try {
