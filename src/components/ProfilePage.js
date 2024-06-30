@@ -22,7 +22,7 @@ export default function ProfilePage(){
  // Функция для получения данных
  const fetchData = async () => {
    try {
-     const response = await fetch(`https://89.23.98.183:9000/user/${id}`); // Путь к вашему API
+     const response = await fetch(`https://codelounge.ru/user/${id}`); // Путь к вашему API
      const result = await response.json();
      setData(result);
    } catch (error) {

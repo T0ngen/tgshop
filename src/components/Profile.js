@@ -7,7 +7,7 @@ import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 export default function Profile({data}){
     const GetButtonTopUp = async () => {
         try {
-          const response = await fetch(`https://89.23.98.183:9000/topupbalance/${data.tg_id}`); // Путь к вашему API
+          const response = await fetch(`https://codelounge.ru/topupbalance/${data.tg_id}`); // Путь к вашему API
           console.log(response);
           // const result = await response.json();
           // setData(result); // Если нужно обновить состояние с данными
