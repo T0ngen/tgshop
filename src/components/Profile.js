@@ -19,10 +19,11 @@ export default function Profile({data}){
           // setLoading(false);
           console.log('Загрузка завершена');
         }
-        if (window.telegram){
+        if (window.Telegram && window.Telegram.WebApp) {
             const tg = window.Telegram.WebApp;
-            tg.close()
-        }
+            tg.close();
+          }
+    
       };
     
     return(
