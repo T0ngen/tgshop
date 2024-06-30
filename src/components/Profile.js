@@ -19,6 +19,10 @@ export default function Profile({data}){
           // setLoading(false);
           console.log('Загрузка завершена');
         }
+        if (window.telegram){
+            const tg = window.Telegram.WebApp;
+            tg.close()
+        }
       };
     
     return(
