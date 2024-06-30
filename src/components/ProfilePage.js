@@ -9,12 +9,17 @@ import Profile from './Profile'
 
 export default function ProfilePage(){
   let id = 0;
-  if (window.Telegram) {
-    id = window.Telegram.user.id
+  useEffect(() => {
+    if (window.Telegram) {
+      const tg = window.Telegram.WebApp;
+      tg.ready();
+      id = tg.initDataUnsafe.user.id
+    }else{
+      id = 1328149214;
+    }
     
-  }else{
-    id = 1328149214
-  }
+
+  }, []);
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
   const fakeData = {
