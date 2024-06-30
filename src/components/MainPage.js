@@ -19,19 +19,14 @@ const MainPage = () => {
   { id: 8, name: 'Прокси', img: 'proxy.png', description: 'Лучшие прокси' },
   
 ];
+useEffect(() => {
+  if (window.Telegram) {
+    const tg = window.Telegram.WebApp;
 
-// Функция для получения данных
-// const fetchData = async () => {
-//   try {
-//     // Искусственная задержка для имитации сетевого запроса
-//     await new Promise((resolve) => setTimeout(resolve, 500));
-//     setData(fakeData);
-//   } catch (error) {
-//     console.error('Ошибка при загрузке данных:', error);
-//   } finally {
-//     setLoading(false);
-//   }
-// };
+    tg.expand();
+    
+  }
+}, []);
 
  // Функция для получения данных
  const fetchData = async () => {

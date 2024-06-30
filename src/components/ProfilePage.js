@@ -8,7 +8,13 @@ import Profile from './Profile'
 
 
 export default function ProfilePage(){
-  let id = 1328149214;
+  let id = 0;
+  if (window.Telegram) {
+    id = window.Telegram.user.id
+    
+  }else{
+    id = 1328149214
+  }
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
   const fakeData = {
