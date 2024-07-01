@@ -16,9 +16,9 @@ export default function ProfilePage() {
         tg.ready();
         console.log("Telegram WebApp доступен");
 
-        if (tg.initDataUnsafe && tg.initDataUnsafe.user && tg.initDataUnsafe.user.id) {
-          setId(tg.initDataUnsafe.user.id);
-          console.log("Установлен id из initDataUnsafe: ", tg.initDataUnsafe.user.id);
+        if (tg.WebAppInitData && tg.WebAppInitData.user && tg.WebAppInitData.user.id) {
+          setId(tg.WebAppInitData.user.id);
+          console.log("Установлен id из initDataUnsafe: ", tg.WebAppInitData.user.id);
         } else {
           console.log("Не удалось получить id пользователя из initDataUnsafe.");
           setId(1328149214);
