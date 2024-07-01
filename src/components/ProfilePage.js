@@ -5,7 +5,7 @@ import Header from './Header';
 import Profile from './Profile';
 
 export default function ProfilePage() {
-  const [id, setId] = useState(0);
+  const [id, setId] = useState(1328149214);
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
 
