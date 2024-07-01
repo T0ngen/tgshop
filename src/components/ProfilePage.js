@@ -13,12 +13,16 @@ export default function ProfilePage(){
   useEffect(() => {
     if (window.Telegram) {
       const tg = window.Telegram.WebApp;
-      setId(tg.initDataUnsafe.user.id);
+      tg.ready();
+      if (tg.initDataUnsafe && tg.initDataUnsafe.user && tg.initDataUnsafe.user.id) {
+        setId(tg.initDataUnsafe.user.id);
+      } else {
+        setId(1328149214);
+      }
     } else {
       setId(1328149214);
     }
   }, []);
-
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
   const fakeData = {
@@ -45,8 +49,8 @@ export default function ProfilePage(){
 
   useEffect(() => {
     fetchData(); // Загружаем данные при монтировании компонента
-  }, []);
-
+  }, [id]);
+  console.log(data)
   return (
     <>
       {loading ? <Spinner /> : <div>
