@@ -10,9 +10,13 @@ export default function ProfilePage() {
   const [data, setData] = useState(null);
   
   useEffect(() => {
-    const tg = window.Telegram.WebApp;
-    tg.ready();
-    setId(tg.initDataUnsafe.user.id);
+    if (window.Telegram){
+      const tg = window.Telegram.WebApp;
+      tg.ready();
+      setId(tg.initDataUnsafe.user.id);
+    }else{
+      setId(1328149214);
+    }
     // const fetchUserId = () => {
     //   if (window.Telegram) {
     //     const tg = window.Telegram.WebApp;
