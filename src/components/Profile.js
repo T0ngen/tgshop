@@ -32,7 +32,7 @@ export default function Profile({data}){
         <div className='profile-conteiner'>
             <div className='profile'>
             <div className='profile-userinfo2'>
-                <h4 className='username'>{data.username}</h4>
+                <h4 className='username'>{data.name}</h4>
                 <p className='telegram-id'><b>ID:</b> {data.tg_id}</p>
             </div>
             <div className='profile-userinfo2 row-balance'>
