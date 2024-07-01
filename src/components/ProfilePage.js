@@ -13,13 +13,12 @@ export default function ProfilePage(){
   useEffect(() => {
     if (window.Telegram) {
       const tg = window.Telegram.WebApp;
-      tg.ready();
       setId(tg.initDataUnsafe.user.id);
     } else {
       setId(1328149214);
     }
   }, []);
-  
+
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
   const fakeData = {
