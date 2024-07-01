@@ -19,7 +19,7 @@ export default function Profile({data}){
           // setLoading(false);
           console.log('Загрузка завершена');
         }
-        if (window.Telegram && window.Telegram.WebApp) {
+        if (window.Telegram) {
             const tg = window.Telegram.WebApp;
             tg.close();
           }
