@@ -8,28 +8,31 @@ export default function ProfilePage() {
   const [id, setId] = useState(null);
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
-
+  
   useEffect(() => {
-    const fetchUserId = () => {
-      if (window.Telegram) {
-        const tg = window.Telegram.WebApp;
-        tg.ready();
-        console.log("Telegram WebApp доступен");
+    const tg = window.Telegram.WebApp;
+    tg.ready();
+    setId(tg.initDataUnsafe.user.id);
+    // const fetchUserId = () => {
+    //   if (window.Telegram) {
+    //     const tg = window.Telegram.WebApp;
+    //     tg.ready();
+    //     console.log("Telegram WebApp доступен");
 
-        if (tg.WebAppInitData && tg.WebAppInitData.user && tg.WebAppInitData.user.id) {
-          setId(tg.WebAppInitData.user.id);
-          console.log("Установлен id из initDataUnsafe: ", tg.WebAppInitData.user.id);
-        } else {
-          console.log("Не удалось получить id пользователя из initDataUnsafe.");
-          setId(1328149214);
-        }
-      } else {
-        console.log("Telegram WebApp недоступен.");
-        setId(1328149214);
-      }
-    };
+    //     if (tg.initDataUnsafe && tg.initDataUnsafe.user && tg.initDataUnsafe.user.id) {
+    //       setId(tg.initDataUnsafe.user.id);
+    //       console.log("Установлен id из initDataUnsafe: ", tg.initDataUnsafe.user.id);
+    //     } else {
+    //       console.log("Не удалось получить id пользователя из initDataUnsafe.");
+    //       setId(1328149214);
+    //     }
+    //   } else {
+    //     console.log("Telegram WebApp недоступен.");
+    //     setId(1328149214);
+    //   }
+    // };
 
-    fetchUserId();
+    // fetchUserId();
   }, []); // Выполняется только один раз при монтировании
 
   useEffect(() => {
