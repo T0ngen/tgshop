@@ -64,7 +64,7 @@ export default function Profile({data}){
             <div className='Orders'>
                <div className='orders-left'>
                 <SupportAgentIcon className='orders-icon' fontSize="large"/>
-                <a href="URL_ВАШЕЙ_ПОДДЕРЖКИ" className='orders-link'>
+                <a href="https://t.me/scdb22" className='orders-link'>
                 <p className='orders-text'>Поддержка</p>
             </a>
 
