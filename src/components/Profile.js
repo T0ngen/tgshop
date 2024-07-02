@@ -4,6 +4,7 @@ import DehazeIcon from '@mui/icons-material/Dehaze';
 import PaymentIcon from '@mui/icons-material/Payment';
 import InfoIcon from '@mui/icons-material/Info';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
+import LaunchIcon from '@mui/icons-material/Launch';
 export default function Profile({data}){
     const GetButtonTopUp = async () => {
         try {
@@ -60,11 +61,19 @@ export default function Profile({data}){
                <p className='orders-text'>{data.buys}</p>
                </div>
             </div>
-            <div className='TopUp'>
+            <div className='Orders'>
+               <div className='orders-left'>
                 <SupportAgentIcon className='orders-icon' fontSize="large"/>
-                <p className='orders-text2'>Поддержка</p>
-              
+                <a href="URL_ВАШЕЙ_ПОДДЕРЖКИ" className='orders-link'>
+                <p className='orders-text'>Поддержка</p>
+            </a>
+
+               </div>
+               <div className='orders-right'>
+               <LaunchIcon  sx={{color:'white'}}></LaunchIcon>
+               </div>
             </div>
+
             <div className='TopUp'>
                 <InfoIcon className='orders-icon' fontSize="large"/>
                 <p className='orders-text2'>Информация</p>
