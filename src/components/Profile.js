@@ -61,18 +61,20 @@ export default function Profile({data}){
                <p className='orders-text'>{data.buys}</p>
                </div>
             </div>
-            <div className='Orders'>
+            
+            <a href="https://t.me/scdb22" className='Orders'>
                <div className='orders-left'>
-                <SupportAgentIcon className='orders-icon' fontSize="large"/>
-                <a href="https://t.me/scdb22" className='orders-link'>
+                <SupportAgentIcon color='action' className='orders-icon' fontSize="large"/>
+               
                 <p className='orders-text'>Поддержка</p>
-            </a>
+          
 
                </div>
                <div className='orders-right'>
                <LaunchIcon  sx={{color:'white'}}></LaunchIcon>
                </div>
-            </div>
+               </a>
+            
 
             <div className='TopUp'>
                 <InfoIcon className='orders-icon' fontSize="large"/>
