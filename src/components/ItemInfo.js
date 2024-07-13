@@ -18,22 +18,7 @@ export default function ItemInfo({ item }) {
   const [data, setData] = useState(null);
   
     const [showAlert, setShowAlert] = useState(false);
-
-    const handleBuyButtonClick = () => {
-      if (data.balance >= totalPrice) {
-          // Если хватает денег на балансе
-          // Дополнительный код для оформления товара
-      } else {
-          // Если не хватает денег на балансе
-          setOpen(false);
-          setShowAlert(true);
-          
-          // Скрыть Alert через 2 секунды
-          setTimeout(() => {
-              setShowAlert(false);
-          }, 2000);
-      }
-  };
+    
 
 
     
@@ -100,6 +85,47 @@ export default function ItemInfo({ item }) {
     }
   }, [id]);
 
+  const handleBuyButtonClick = () => {
+    if (data.balance >= totalPrice) {
+        // Если хватает денег на балансе
+        // Дополнительный код для оформления товара
+        const purchaseData = {
+          // Замените на реальные данные для вашего POST-запроса
+          itemId: item.id,
+          categoryId: item.category_id,
+          quantity: quantity,
+          userId: id,
+      };
+
+      fetch('https://codelounge.ru/purchase', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(purchaseData),
+      })
+      .then(response => response.json())
+      .then(data => {
+          console.log('Success:', data);
+          // Дополнительно обработать успешный резулат пост-запроса
+      })
+      .catch((error) => {
+          console.error('Error:', error);
+          // Обработать ошибку пост-запроса
+      });
+      
+
+    } else {
+        // Если не хватает денег на балансе
+        setOpen(false);
+        setShowAlert(true);
+        
+        
+        setTimeout(() => {
+            setShowAlert(false);
+        }, 3000);
+    }
+};
 
   return (
     <>
