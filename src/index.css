@@ -112,6 +112,8 @@ svg {
     color: white;
     font-weight: 900;
     text-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    margin-left: 10px;
+    margin-right: 10px;
     
 }
 
@@ -484,6 +486,7 @@ svg {
     background-color: #6258AA;
     border-radius: 25px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }
 .buy-button2{
     border: 1px solid black;
@@ -497,6 +500,7 @@ svg {
     border-radius: 25px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 
@@ -519,4 +523,42 @@ svg {
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Легкая тень */
     transform: scale(1.05); /* Слегка увеличиваем кнопку */
     transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+
+.buys-card{
+    padding-top: 20px;
+    margin: 10px;
+}
+
+
+.buy-date{
+    display: flex;
+    color: darkgrey;
+}
+
+
+
+/* 
+.items-container2{
+    padding-top: 20px;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    
+
+} */
+
+.linear3{
+    width: 100%;
+      border: none;          /* Убираем стандартное оформление */
+      height: 2px;           /* Устанавливаем высоту линии */
+      background-color: black; /* Устанавливаем цвет линии */
+  }
+  
+.buy-description{
+    padding-top: 10px;
+    padding-bottom: 5px;
+    color: white;
+    text-align: center;
 }

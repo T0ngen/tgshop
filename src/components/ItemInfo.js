@@ -2,12 +2,11 @@
 import React, { useState, useEffect } from 'react';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import { Drawer, Button, Typography, Box, Slider, IconButton, Grid } from '@mui/material';
+import { Drawer, Typography, Box, Slider, IconButton } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import CloseIcon from '@mui/icons-material/Close';
-import SecondDrawer from './BalanceAlert';
-import  {Alert, AlertTitle } from '@mui/material';
+import  {Alert } from '@mui/material';
 
 
 
@@ -206,7 +205,7 @@ export default function ItemInfo({ item }) {
             }}
           >
             <Typography
-              variant='h7'
+              variant='h6'
               sx={{ 
                 color: 'white',
                 wordWrap: 'break-word',
@@ -220,7 +219,7 @@ export default function ItemInfo({ item }) {
 
             </Typography>
               <hr className='linear-category'/>
-            <Typography  sx={{ mt: 2, color: 'white', fontSize:'11px' }}>
+            <Typography  sx={{ mt: 0, color: 'white', fontSize:'15px' }}>
               {item.description}
             </Typography>
           </Box>
