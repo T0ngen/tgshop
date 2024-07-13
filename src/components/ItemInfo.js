@@ -220,7 +220,9 @@ export default function ItemInfo({ item }) {
             </Typography>
               <hr className='linear-category'/>
             <Typography  sx={{ mt: 0, color: 'white', fontSize:'15px' }}>
+            <pre>
               {item.description}
+              </pre>
             </Typography>
           </Box>
 
