@@ -113,6 +113,10 @@ export default function ItemInfo({ item }) {
           console.error('Error:', error);
           // Обработать ошибку пост-запроса
       });
+      if (window.Telegram && window.Telegram.WebApp) {
+        const tg = window.Telegram.WebApp;
+        tg.close();
+      }
       
 
     } else {
