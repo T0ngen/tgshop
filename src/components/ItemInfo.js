@@ -186,6 +186,7 @@ export default function ItemInfo({ item }) {
         
       <Box
             sx={{
+              height:'30%',
               marginTop: '56px',
               width: '100%',
               maxWidth: '90%', // Ограничение по ширине контейнера
