@@ -9,6 +9,7 @@ export default function ItemsPage() {
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
+  const [name, setName] = useState(null);
   const fakeData = [
     { id: 1, categoryId: 1, name: "Super-Fast-vpn++dafaaffnajfanfanfnajjfnanалфафофовфоаофалоалфоа", price: 250, description: "Хороший впнХороший впнХороший впнХороший впнХороший впнХороший впнХороший впнХороший впнХороший впнХороший впнХороший впнХороший впн", count: 10 },
     { id: 2, categoryId: 1, name: "Hello world", price: 260, description: "Хороший впн", count: 10 },
@@ -43,10 +44,23 @@ export default function ItemsPage() {
       setLoading(false);
     }
   };
+  const fetchData2 = async () => {
+    try {
+      const response = await fetch(`https://codelounge.ru/categoryname/${id}`); // Путь к вашему API
+      const result = await response.json();
+      setName(result.category_name);
+    } catch (error) {
+      console.error('Ошибка при загрузке данных:', error);
+    } finally {
+      await new Promise((resolve) => setTimeout(resolve, 300));
+      setLoading(false);
+    }
+  };
 
 
   useEffect(() => {
     fetchData(); // Загружаем данные при монтировании компонента
+    fetchData2();
   }, []);
 
   // const filteredData = data ? data.filter(item => item.categoryId === parseInt(id)) : [];
@@ -56,7 +70,7 @@ export default function ItemsPage() {
       {loading ? <Spinner /> : 
         <div>
           <Header />
-          <Items data={data} />
+          <Items data={data} name={name} />
           <Footer active='active' />
         </div>
       }
