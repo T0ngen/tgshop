@@ -164,7 +164,7 @@ export default function ItemInfo({ item }) {
         onClose={toggleDrawer(false)}
         PaperProps={{
           sx: {
-            height: '90%',
+            height: '95%',
             borderTopLeftRadius: '16px',
             borderTopRightRadius: '16px',
             boxShadow: '0 -4px 16px rgba(0, 0, 0, 0.2)',
@@ -186,7 +186,7 @@ export default function ItemInfo({ item }) {
         
       <Box
             sx={{
-              height:'30%',
+              height:'35%',
               marginTop: '56px',
               width: '100%',
               maxWidth: '90%', // Ограничение по ширине контейнера
