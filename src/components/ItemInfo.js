@@ -1,15 +1,44 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Drawer, Button, Typography, Box, Slider, IconButton, Grid } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import CloseIcon from '@mui/icons-material/Close';
+import SecondDrawer from './BalanceAlert';
+import  {Alert, AlertTitle } from '@mui/material';
+
+
 
 export default function ItemInfo({ item }) {
   const [open, setOpen] = useState(false);
   const [quantity, setQuantity] = useState(1);
+  const [id, setId] = useState(0);
+  const [data, setData] = useState(null);
+  
+    const [showAlert, setShowAlert] = useState(false);
+
+    const handleBuyButtonClick = () => {
+      if (data.balance >= totalPrice) {
+          // Если хватает денег на балансе
+          // Дополнительный код для оформления товара
+      } else {
+          // Если не хватает денег на балансе
+          setOpen(false);
+          setShowAlert(true);
+          
+          // Скрыть Alert через 2 секунды
+          setTimeout(() => {
+              setShowAlert(false);
+          }, 2000);
+      }
+  };
+
+
+    
+
+
 
   const toggleDrawer = (state) => () => {
     setOpen(state);
@@ -28,6 +57,48 @@ export default function ItemInfo({ item }) {
   };
 
   const totalPrice = (item.price * quantity).toFixed(2);
+  
+
+  useEffect(() => {
+    if (window.Telegram) {
+      const tg = window.Telegram.WebApp;
+      tg.ready();
+      if (tg.initDataUnsafe && tg.initDataUnsafe.user && tg.initDataUnsafe.user.id) {
+        setId(tg.initDataUnsafe.user.id);
+        console.log('Telegram WebApp initialized:', tg.initDataUnsafe.user.id);
+      } else {
+        console.log('Telegram WebApp user data is not available.');
+        // Использовать заглушку данных, если данные Telegram недоступны
+        setId(1328149214);
+      }
+    } else {
+      // Если Telegram WebApp не доступен
+      console.log('Telegram WebApp не доступен');
+      setId(1328149214);
+    }
+  }, []);
+
+  const fetchData = async (userId) => {
+    try {
+      console.log(`Fetching data for user ID: ${userId}`);
+      const response = await fetch(`https://codelounge.ru/user/${userId}`); // Путь к вашему API
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const result = await response.json();
+      console.log('Data fetched:', result);
+      
+      setData(result);
+    } catch (error) {
+      console.error('Ошибка при загрузке данных:', error);
+    } 
+  };
+
+  useEffect(() => {
+    if (id !== 0) { // Загружаем данные только если id установлен
+      fetchData(id);
+    }
+  }, [id]);
 
 
   return (
@@ -208,15 +279,35 @@ export default function ItemInfo({ item }) {
         }}>
         
         {item.count > 0 && (
-                <div className='buy-button2' onClick={() => toggleDrawer(false)}>
+                <div className='buy-button2' onClick={handleBuyButtonClick}>
+
                     <ShoppingCartIcon />
                     <h3 className='Text-buy-button'>Оформить товар</h3>
                 </div>
             )}
 
         </Box>
+        
+
 
       </Drawer>
+      {showAlert && (
+        <Alert variant="filled" severity="error" style={alertStyles}> 
+  Недостаточно средств на балансе!
+</Alert>
+            )}
+        
+
     </>
   );
 }
+
+
+const alertStyles = {
+  position: 'fixed',
+  top: '0',
+  left: '50%',
+  transform: 'translateX(-50%)',
+  width: '100%',
+  zIndex: 9999, // чтобы убедиться, что Alert поверх всех элементов
+};
