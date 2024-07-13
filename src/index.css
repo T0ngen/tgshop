@@ -562,3 +562,18 @@ svg {
     color: white;
     text-align: center;
 }
+
+
+.pre-container {
+    max-width: 100%;
+    overflow-x: auto;
+    color: white;
+}
+pre {
+    white-space: pre-wrap; /* Изменяет поведение пробелов внутри <pre> */
+    word-wrap: break-word; /* Перенос слов для длинных строк */
+    font-size: 1.2em; /* Относительный размер шрифта */
+    font-family: monospace; /* Моноширинный шрифт по умолчанию */
+    padding: 10px;
+
+}
