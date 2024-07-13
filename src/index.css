@@ -565,11 +565,13 @@ svg {
 
 
 .pre-container {
+    height: auto;
     max-width: 100%;
     overflow-x: auto;
     color: white;
 }
 pre {
+
     white-space: pre-wrap; /* Изменяет поведение пробелов внутри <pre> */
     word-wrap: break-word; /* Перенос слов для длинных строк */
     font-size: 1.2em; /* Относительный размер шрифта */
