@@ -151,10 +151,10 @@ export default function ItemInfo({ item }) {
             <ShoppingCartIcon />
             <h3 className='Text-buy-button'>Купить</h3>
           </div>
-          <div className='buy-button'>
+          {/* <div className='buy-button'>
             <FavoriteIcon />
             <h3 className='Text-buy-button'>В избранное</h3>
-          </div>
+          </div> */}
         </div>
       </div>
 
