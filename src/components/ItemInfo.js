@@ -1,17 +1,19 @@
 
 import React, { useState, useEffect } from 'react';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import FavoriteIcon from '@mui/icons-material/Favorite';
+import DescriptionIcon from '@mui/icons-material/Description';
 import { Drawer, Typography, Box, Slider, IconButton } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import CloseIcon from '@mui/icons-material/Close';
 import  {Alert } from '@mui/material';
-
+import ProductSlider from './ProductSlider';
+import ModalImage from "react-modal-image";
 
 
 export default function ItemInfo({ item }) {
   const [open, setOpen] = useState(false);
+  const [open2, setOpen2] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [id, setId] = useState(0);
   const [data, setData] = useState(null);
@@ -19,11 +21,23 @@ export default function ItemInfo({ item }) {
     const [showAlert, setShowAlert] = useState(false);
     
 
-
+    const product = {
+      name: 'Товар 1',
+      images: [
+        'https://i.ibb.co/Z8vDHw3/2024-07-04-22-10-48.png',
+        'https://i.ibb.co/SR6ZNmT/E41054-D8-9-A53-4-CBE-BFFA-CDC574-E1652-E.jpg',
+        'https://via.placeholder.com/300x300',
+        'https://via.placeholder.com/300x350'
+      ]
+    };
+    
     
 
 
 
+  const toggleDrawer2 = (state) => () => {
+    setOpen2(state);
+  };
   const toggleDrawer = (state) => () => {
     setOpen(state);
   };
@@ -149,12 +163,12 @@ export default function ItemInfo({ item }) {
         <div className='buy-save-container'>
           <div className='buy-button' onClick={toggleDrawer(true)}>
             <ShoppingCartIcon />
-            <h3 className='Text-buy-button'>Купить</h3>
+            <h3 className='Text-buy-button' >Купить</h3>
           </div>
-          {/* <div className='buy-button'>
-            <FavoriteIcon />
-            <h3 className='Text-buy-button'>В избранное</h3>
-          </div> */}
+          <div className='buy-button' onClick={toggleDrawer2(true)}>
+            <DescriptionIcon />
+            <h3 className='Text-buy-button'>Подробнее</h3>
+          </div>
         </div>
       </div>
 
@@ -330,6 +344,87 @@ export default function ItemInfo({ item }) {
 </Alert>
             )}
         
+
+            <Drawer
+        anchor='bottom'
+        open={open2}
+        onClose={toggleDrawer2(false)}
+        PaperProps={{
+          sx: {
+            height: 'auto',
+            minHeight:'100%',
+            borderTopLeftRadius: '16px',
+            borderTopRightRadius: '16px',
+            boxShadow: '0 -4px 16px rgba(0, 0, 0, 0.2)',
+            backgroundColor: '#2A2B30',
+            
+          },
+        }}
+      >
+         <Box
+        
+        sx={{
+          p: 2,
+          height: 'auto',
+          display: 'flex',
+          flexDirection: 'column',
+          
+        //   alignItems: 'center',
+          backgroundColor: '#2A2B30',
+        }}
+      > 
+        <Box
+            sx={{
+              marginTop: '56px',
+              width: '100%',
+              maxWidth: '90%', // Ограничение по ширине контейнера
+             
+              textOverflow: 'ellipsis',
+              wordWrap: 'break-word',
+              wordBreak: 'break-word',
+              display: 'flex',
+              alignItems: 'center',
+              flexDirection: 'column',
+              padding: '5px',
+              position:'relative'
+              
+              
+              
+              
+              
+            }}
+          >
+            <Typography
+              variant='h5'
+              sx={{ 
+                color: 'white',
+                // wordWrap: 'break-word',
+                // whiteSpace: 'normal',
+                // textAlign: 'center', // Это опционально и зависит от вашего желаемого выравнивания текста
+                
+                width: '100%',       // Задать ширину элемента, чтобы текст знал рамки, в которых он может переноситься
+              }}
+            >
+              Информация о {item.name}
+            </Typography>
+            
+          </Box>
+          <div className=''>
+          <ProductSlider product={product} />
+      
+    
+
+        </div>
+
+          <IconButton
+            sx={{ position: 'fixed', top: 88, right: 26, color: 'white' }}
+            onClick={toggleDrawer2(false)}
+          >
+            <CloseIcon fontSize='large' />
+          </IconButton></Box>
+     
+      </Drawer>
+       
 
     </>
   );

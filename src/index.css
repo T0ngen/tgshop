@@ -579,3 +579,43 @@ pre {
     padding: 10px;
 
 }
+
+
+
+.product-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 20px;
+  }
+  
+  .image-container {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* Квадратный контейнер */
+    
+  }
+  
+  .image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+    cursor: pointer; /* Изменение курсора при наведении */
+  }
+  
+  /* Стили для react-modal-image */
+  .react-modal-image__modal {
+    z-index: 1000; /* Увеличьте значение z-index, если модальное окно перекрывается другими элементами */
+  }
+  
+  .react-modal-image__overlay {
+    background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон для оверлея */
+  }
+
+.product-image-img{
+    height: 80%;
+    width: 70%;
+}
